@@ -1,17 +1,17 @@
 
-// switchTheme = () => {
-//   let targetTheme = document.getElementById("themeSwitcher").textContent;
-//   if(targetTheme == "dark"){
-//     document.getElementById("themeStyleSheet").setAttribute("href", "css/dark.css");
-//     document.getElementById("themeSwitcher").textContent = "light";
-//   } else {
-//     document.getElementById("themeStyleSheet").setAttribute("href", "css/light.css");
-//     document.getElementById("themeSwitcher").textContent = "dark";
-//   }
-// };
-// document
-// .getElementById("themeSwitcher")
-// .addEventListener("click", switchTheme)
+switchTheme = () => {
+  let targetTheme = document.getElementById("themeSwitcher").textContent;
+  if(targetTheme == "dark"){
+    document.getElementById("themeStyleSheet").setAttribute("href", "css/dark.css");
+    document.getElementById("themeSwitcher").textContent = "light";
+  } else {
+    document.getElementById("themeStyleSheet").setAttribute("href", "css/light.css");
+    document.getElementById("themeSwitcher").textContent = "dark";
+  }
+};
+document
+.getElementById("themeSwitcher")
+.addEventListener("click", switchTheme)
 
 
 

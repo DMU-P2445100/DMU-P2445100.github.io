@@ -18,15 +18,26 @@ body {
 section{
   width:100%;
   min-height: 100vh;
+  /* min-height ensures that the page can scroll when content is added past the 100vh */
   color: #fff;
   background-color: black;
   background-size: 400% 400%;
+  /* this ensures the moving background will not move out of the screen */
   position: relative;
+  /* Puts the gradient in a relative postion to the container, which is the whole screen */
   background-repeat: no-repeat;
+  /* ensures the background will remain as one gradient rather than several */
   background-attachment: fixed;
+  /* keeps it in a fixed place. */
   background-position: center;
+  animation: change 10s ease-in-out infinite;
+  /* allows the animation to move over 10 seconds, the ease-in-out makes it appear smoother
+  infinite makes it carry on forever. */
   overflow: scroll;
+  /* tutorial accessed at https://www.youtube.com/watch?v=fBRzD6dwJfw&ab_channel=JulioCodes */
 }
+
+
 
 
 /* NAVBAR */
@@ -35,8 +46,9 @@ section{
   display: flex;
   /* so the boxes can line up side by side */
   justify-content: space-between;
-  justify-content: center;
   /* pushes them as far apart as possible */
+  justify-content: center;
+  /* makes the elements line up in the center */
   align-items: center;
   /* links will line up links in the center of the title */
   /* background-color: rgba(100,100,100,0.5); */
@@ -48,7 +60,7 @@ section{
 
 
 .brand-title {
-  font-family: Arial;
+  font-family: Helvetica;
   font-size: 1.5rem;
   margin: .5rem;
 }
@@ -71,7 +83,7 @@ section{
   color: white;
   padding: 2rem;
   display: block;
-  /* show up at a larger size */
+  /* so that the list iteams can show up at a larger size */
   font-size: 1.3rem;
 }
 
@@ -101,8 +113,10 @@ section{
   border-radius: 10px;
 }
 /* makes the lines actually show up */
+/* tutorial accessed at https://www.youtube.com/watch?v=At4B7A4GOPg&ab_channel=WebDevSimplified */
 
 
+/* styling for smaller screens */
 @media (max-width: 600px) {
   .toggle-button {
     display: flex;
@@ -156,7 +170,6 @@ section{
     position: relative;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba();
     color: white;
     border-bottom: 1px #fff;
 }
@@ -190,7 +203,7 @@ section{
 }
 
 .navbar-links2 li:hover {
-    background-color: #555;
+  background-color: rgba(255,255,255,0.3);
 }
 
 .toggle-button2 {
@@ -211,6 +224,7 @@ section{
     border-radius: 10px;
 }
 
+/*  */
 @media (max-width: 600px) {
     .navbar2 {
         flex-direction: column;
@@ -252,9 +266,12 @@ h1{
   letter-spacing: 2px;
   border: 3px solid #fff;
   position: absolute;
+  /* keeps the title the same location in the page */
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* transform is used as there aren't many different elements on the page that
+  might have problems overlapping etc */
   padding: 3rem 3rem;
   display: block;
 }
@@ -264,7 +281,7 @@ h1{
   }
 }
 
-/* when screen is over 601px, increase font size by 1.5 */
+/* when screen is over 1001px, make font size 6rem */
 
 p1{
   font-family: Helvetica;
@@ -285,6 +302,7 @@ p1{
 .search-box{
   width: 40%;
   position: relative;
+  /* so that it can move when the navbar drops down */
   display: flex;
   top: 15%;
   left: 50%;
@@ -295,7 +313,7 @@ p1{
 }
 
 
-
+/* tutorial accessed through https://www.youtube.com/watch?v=coV25parbI8&ab_channel=CssCoder */
 .search{
   width:100%;
   border: 1px solid rgba(255,255,255,0);
@@ -320,6 +338,7 @@ p1{
   border-radius: 0 5px 5px 0;
   border-left: none;
   cursor: pointer;
+  /* changes the cursor to a pointer when over the search button */
   font-size: 20px;
   color: rgba(100,100,100);
 }
@@ -340,8 +359,8 @@ p1{
   line-height: 1.5;
   display: block;
   text-decoration: none;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid #2ecc71;
+  border-bottom: 1px solid #2ecc71;
   padding: 1rem;
 }
 
@@ -362,8 +381,6 @@ p1{
 }
 }
 
-
-
 /* when screen is over 601px, increase font size by 1.5 */
 
 
@@ -376,6 +393,7 @@ p1{
   align-items: center;
   max-width: 110px;
   display: inline-grid;
+  /*  */
   padding-right: 10px;
   top: 15%;
 }
@@ -391,6 +409,8 @@ p1{
 .gallery {
   position: absolute;
   display: grid;
+  /* grid is used here so that each video lines up evenly
+  and more videos can be easily added. */
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 11em;
   grid-row-gap: 3em;
@@ -403,16 +423,18 @@ p1{
 .gallery iframe{
   cursor: pointer;
   transition: 0.3s all ease;
-
+  /* makes animation smooth */
 }
 
 .gallery iframe:hover {
   transform: scale(0.9);
+  /* for desktop, shrinking animation when the user hovers over it */
 }
 
 @media screen and (max-width: 1000px) {
    .gallery{
     grid-template-columns: repeat(1, 1fr);
+    /* turns grid into one column when on smaller screen */
   }
 }
 
@@ -427,12 +449,14 @@ p1{
     width: 90%;
     position:relative;
     display: grid;
+    /* grid used again to keep everything easily organised */
     justify-content: center;
     align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%);
     margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .tool-title{
@@ -457,6 +481,7 @@ p1{
   padding-top: 25px;
   margin-left: auto;
   margin-right: auto;
+  /* keeps the text central */
   margin-bottom: 25px;
   overflow-wrap: normal;
 }
@@ -471,12 +496,20 @@ p1{
    .tools{
      width: 50%;
    }
+   .tools video{
+     min-width: 420px;
+     height: 340px;
+ }
+}
+
+.tools video{
+  width: 320px;
+  height: 240px;
+  margin-bottom: 10%;
 }
 
 
-
-
-
+/* tutorial accessed through https://www.youtube.com/watch?v=Db5jCkrVgAw&ab_channel=TrueCoder */
 .contact-container{
   width: 80%;
   position:relative;
@@ -499,6 +532,7 @@ p1{
   position: relative;
 }
 
+/* separate contact containers for the thankyou.html page */
 .contact-container2{
   width: 80%;
   position:relative;
@@ -550,7 +584,6 @@ p1{
   text-align: center;
   line-height: 1.5;
   font-size: 1rem;
-
   padding: 10px;
 }
 
@@ -587,6 +620,7 @@ h2:after{
 
 .field:hover{
 	background-color: rgba(0, 0, 0, 0.1);
+  /* to give the user some visual feedback that they are meant to click in that area */
 }
 
 textarea{
@@ -618,15 +652,4 @@ textarea{
 	.contact-box{
 		grid-template-columns: 1fr;
 	}
-}
-
-
-.footer{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:60px;
-  background:#6cf;
-  padding-top: 20px;
-  padding-left: 5px;
 }

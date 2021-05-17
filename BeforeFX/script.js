@@ -40,19 +40,25 @@ toggleButton2.addEventListener("click", () =>{
 
 function submitForm() {
    window.location.href="thankyou.html";
+   // when form is submited, go to thankyou.html page
    return false; // Prevent page refresh
 }
 
 
 const searchButton = document.getElementsByClassName("search-button")[0]
+// grabs the search button element
 
 searchButton.addEventListener("click", () =>{
   let searchTerm = document.getElementsByClassName('search')[0].value;
+  // when clicked, takes the text in the search box as a value
   let galleryArray = document.querySelectorAll(".gallery div");
   Array.from(galleryArray).forEach( element => {
     if(!element.getAttribute('data-tags').includes(searchTerm)){
       searchTerm = searchTerm.toLowerCase();
       element.style.display = "none";
+      // cycles through the new array created within the gallery div, searching
+      // through the data tags to find matching value
+      // makes all search terms be read in lower case
     }
    })
   })
